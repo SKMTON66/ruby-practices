@@ -41,6 +41,7 @@ class Game
     @frames.each_with_index do |frame, index|
       game_score += frame.score
       next if index == LAST_FRAME_INDEX
+
       game_score += if frame.spare?
                       @frames[index + 1].first_shot.score
                     elsif frame.strike?
