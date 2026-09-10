@@ -10,6 +10,12 @@ class FrameTest < Minitest::Test
     @open_frame = Frame.new([Shot.new('3'), Shot.new('3')])
   end
 
+  def test_shots
+    assert_equal [10], @strike_frame.shots
+    assert_equal [3, 7], @spare_frame.shots
+    assert_equal [3, 3], @open_frame.shots
+  end
+
   def test_score
     assert_equal 10, @strike_frame.score
     assert_equal 10, @spare_frame.score
